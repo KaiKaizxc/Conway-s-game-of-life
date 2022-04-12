@@ -19,11 +19,24 @@
     padding: 30px;
     text-align: center;
     font-size: 2rem;
+    cursor: pointer;
 }
 
 .live {
     background: linear-gradient(to right, #4b6cb7, #182848); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: white;
     
+}
+
+.start {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(to right, #5f2c82, #49a09d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    cursor: pointer;
+
 }
 
