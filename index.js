@@ -3,7 +3,7 @@ let numberOfRows = 9;
 let numberOfColumns = 9;
 const startButton = document.querySelector(".start");
 let sumOfNeighbours;
-
+let running = false;
 var nodesList= [];
 
 for (let i = 0; i < numberOfRows ; i++) {
@@ -39,13 +39,15 @@ function createGrids() {
 
 createGrids()
 
-console.log(nodesList);
 
 
 
-//============================== start button configuration here ==============================
 
-startButton.addEventListener('click', ()=> gameOfLife(nodesList));
+
+
+// startButton.addEventListener('click', ()=> gameOfLife(nodesList));
+
+// fnction gameStart()u
 
 
 // ================ Game deployed here =====================================
@@ -132,12 +134,13 @@ function gameOfLife(board) {
             neighbours = checkNeighbours(duplicate, i, j);
             if (neighbours.length > 0) {
                 sumOfNeighbours = neighbours.reduce((previousValue, currentValue) => previousValue + currentValue);
-                console.log(sumOfNeighbours);
+                
 
             }
             else {
                 sumOfNeighbours = 0;
             }
+
 
             if (sumOfNeighbours == 2) {
                 continue; // this lives on 
@@ -156,5 +159,12 @@ function gameOfLife(board) {
     }
 
 }
+
+//============================== start button configuration here ==============================
+// startButton.addEventListener('click', ()=> gameOfLife(nodesList));
+
+startButton.addEventListener('click', () => {
+    timerId = setInterval( ()=> gameOfLife(nodesList) , 800);
+})
 
 
